@@ -1,0 +1,83 @@
+#dialog-grade-record {
+  .modal-content {
+	  .title {
+		  position: relative;
+		  display: flex;
+		  font-size: 1.1vw;
+		  font-weight: 600;
+		  padding: 30px;
+		  color: #FFFFFF;
+		  background-color: $main1;
+		  > div {
+			  &:first-child {
+				  width: 40%;
+			  }
+			  &:last-child {
+				  width: 60%;
+				  text-align: right;
+				  font-weight: 400;
+				  padding-right: 40px;
+				  i {
+					  position: absolute;
+					  right: 20px;
+					  top: 24px;
+					  font-size: 1.6vw;
+					  cursor: pointer;
+				  }
+			  }
+		  }
+	  }
+	}
+	.content-container{
+		padding: 20px 30px;
+		.recording-wrapper {
+			display: flex;
+			flex-direction: column;
+			.recording-panel {
+				//height: 80px;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				border-bottom: 1px solid $grey4;
+				margin-bottom: 20px;
+				.recording-item {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin-bottom: 10px;
+					.dot-time-panel {
+						display: flex;
+						align-items: center;
+						img {
+							margin-right: 10px;
+						}
+						.time {
+							color: $grey7;
+						}
+					}
+					.score {
+						color: $main1;
+						font-weight: 600;
+					}
+				}
+				.recording-info {
+					color: $sub1;
+					margin-left: 3%;
+				}
+				.recording-player {
+					margin-top: 15px;
+					margin-bottom: 15px;
+					audio {
+						width: 100%;
+					}
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+}
+

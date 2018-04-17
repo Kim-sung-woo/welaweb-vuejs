@@ -1,0 +1,467 @@
+app-root {
+  .openedPreview {
+    width: calc(100% - 415px);
+    min-width: 960px;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+  }
+  .closePreview {
+    width: 100%;
+    min-width: 960px;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+  }
+}
+
+.cdk-overlay-pane {
+
+  .passcode-pannel {
+    .top-triangle {
+      //background-image: url(~/assets//img/ic_triangle_up.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: flex;
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      top: -19px;
+      left: 107px;
+    }
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25) !important;
+    margin-top: 40px !important;
+    margin-left: -107px;
+    max-width: 270px !important;
+    width: 270px !important;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey10;
+    background-color: white;
+    .mat-menu-content {
+      padding: 20px;
+    }
+    .passcode-pannel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 400;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+    .passcode-pannel-contents {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777777;
+      line-height: 16px;
+    }
+    .passcode-box {
+      display: flex;
+      .passcode {
+        margin-top: 15px;
+        border: 1px solid $grey3;
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: $grey1;
+        letter-spacing: 7px;
+      }
+    }
+
+  }
+  .notification-menu {
+    .top-triangle {
+      //background-image: url(~/assets//img/ic_triangle_up.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: flex;
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      top: -19px;
+      left: 215px;
+    }
+    top: 30px;
+    margin-top: 40px !important;
+    margin-left: -214px;
+    max-width: 470px !important;
+    width: 470px !important;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey10;
+    background-color: white;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25) !important;
+    .mat-menu-content {
+      padding: 0;
+      .notification-header {
+        height: 60px;
+        border-bottom: solid 1px $grey4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        .label {
+          font-size: 15px;
+          font-weight: 500;
+          color: $grey10;
+        }
+        .see-all {
+          cursor: pointer;
+          font-size: 12px;
+          font-weight: 500;
+          color: $grey6;
+        }
+      }
+      .notification-content {
+        margin: 0;
+        height: 400px;
+        width: 100%;
+        position: relative;
+        .no-notification {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          div {
+            font-size: 16px;
+            font-weight: 500;
+            color: $grey10;
+          }
+          img {
+            width: 200px;
+            height: 162px;
+            margin-bottom: 15px
+          }
+        }
+        .notification-items {
+          &:first-child {
+            margin-top: 15px;
+          }
+        }
+        .notification-item {
+          margin: 5px 12px;
+          border: solid 1px $grey4;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          border-left: solid 5px $grey4;
+          .notification-desc {
+            padding: 15px;
+            width: 80%;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: $grey10;
+            line-height: 24px;
+
+            .payment {
+              color: $sub4;
+            }
+            .notification-date {
+              font-size: 12px;
+              font-weight: 500;
+              color: $grey6;
+              display: flex;
+              align-items: center;
+              .line {
+                border-right: 1px solid $grey6;
+                margin: 0 15px 4px;
+                height: 12px;
+              }
+              .notification-remove {
+                background-color: transparent;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-right: 10px;
+                div {
+                  color: $sub5;
+                }
+              }
+            }
+          }
+        }
+        .spacer {
+          width: 100%;
+          height: 20px;
+        }
+      }
+      .notification-footer {
+        border-top: solid 1px $grey4;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .account-menu {
+    .top-triangle {
+      //background-image: url(~/assets//img/ic_triangle_up.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: flex;
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      top: -20px !important;
+      left: 310px !important;
+    }
+    margin-top: 20px !important;
+    margin-left: -165px;
+    width: 400px;
+    max-width: 400px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey10;
+    background-color: white;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25) !important;
+    //border: none !important;
+    swiper-container {
+      width: 371px;
+      height: 160px;
+
+      .swiper-wrapper {
+        width: 100%;
+
+      }
+      swiper-slide {
+        cursor: pointer;
+        padding: 15px;
+        width: 371px !important;
+        height: 200px !important;
+        .banner-item {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          width: 371px;
+          height: 200px;
+        }
+      }
+      .swiper-pagination {
+        bottom: vw(35);
+        width: 100%;
+        height: 20px;
+        .swiper-pagination-bullet {
+          width: vw(15);
+          border-radius: 50%;
+          height: vw(15);
+          opacity: 1;
+          background-color: white;
+        }
+        .swiper-pagination-bullet-active {
+          border-radius: 50%;
+          background-color: $positive;
+        }
+      }
+    }
+
+    .user-info {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: solid 1px $grey4;
+      font-size: 14px;
+      font-weight: 400;
+      color: $grey9;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 15px;
+      .user-panel {
+        display: flex;
+        flex-direction: column;
+        .template-name {
+          font-size: 19px;
+          font-weight: 600;
+        }
+        .app-name-button {
+          margin-top: 15px;
+          color: $grey7;
+          font-size: 15px;
+          font-weight: 200;
+          cursor: pointer;
+        }
+      }
+      .plan-panel {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        .plan-name {
+
+        }
+        .day-left {
+          font-size: 20px;
+          color: #2392e9;
+          font-weight: 400;
+          text-align: right;
+          margin-top: 15px;
+        }
+      }
+
+      div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 1px 5px;
+      }
+      .user-label {
+        padding: 0 5px 0 0;
+        font-weight: 500;
+      }
+    }
+    .mat-menu-content {
+      border: none;
+      padding: 0;
+      overflow-x: hidden;
+
+      button {
+        width: 100%;
+        height: 60px;
+        font-size: 16px;
+        padding-left: 25px;
+        font-weight: 500;
+        text-align: left;
+        span {
+          color: $positive;
+        }
+      }
+      [md-menu-item]:focus:not([disabled]), [md-menu-item]:hover:not([disabled]) {
+        background-color: transparent;
+      }
+      .ruler {
+        margin: auto;
+        width: 90%;
+        height: 1px;
+        background-color: $grey4;
+      }
+    }
+  }
+
+  .myAppList {
+    max-width: 275px !important;
+    width: 275px !important;
+    margin-left: 415px;
+    margin-top: -50px;
+    min-height: 100px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: $grey10;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25) !important;
+    background-color: white;
+    .mat-menu-content {
+      padding: 10px 0;
+      margin: 0px 15px;
+      .myapp-list {
+        padding: 20px 5px;
+        .myapp-name {
+          cursor: pointer;
+          display: flex;
+          min-height: 25px;
+          align-items: center;
+          justify-content: space-between;
+          color: $grey10;
+        }
+        .selected {
+          color: $positive;
+        }
+      }
+      & .bottom-line {
+        border-bottom: 1px solid $grey4;
+      }
+    }
+  }
+}
+
+.header-tooltip {
+  tooltip-content {
+    .tooltip {
+      .tooltip-header {
+        .tooltip-header-label {
+          font-size: 17px;
+          font-weight: 400;
+          color: #000000;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.plan-upgrade-tooltip {
+  tooltip-content {
+    .tooltip {
+      .tooltip-header {
+        .tooltip-header-label {
+          font-size: 17px;
+          font-weight: 400;
+          color: #000000;
+          margin-bottom: 15px;
+        }
+      }
+      .tooltip-content {
+        margin-bottom: 20px;
+        .tooltip-label {
+          font-size: 15px;
+          font-weight: 400;
+          color: #000000;
+          margin-bottom: 5px;
+        }
+        .tooltip-line-content {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.apply-tooltip {
+  position: fixed;
+  top: 0;
+  left: -100px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  tooltip-content {
+    .tooltip {
+      width: 300px;
+      &.arrow {
+        &.bottom {
+          &:after {
+            top: -15px;
+            left: 70%;
+            margin-left: -15px;
+            border-width: 0 15px 15px;
+            border-color: #FFFFFF transparent;
+          }
+        }
+      }
+      .tooltip-header {
+        .tooltip-header-label {
+          font-size: 17px;
+          font-weight: 400;
+          color: #000000;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+#dialog-private-policy {
+	.policy-header {
+		width: 100%;
+		display: flex;
+		font-size: 1.1vw;
+		font-weight: 600;
+		padding: 20px 30px;
+		color: #FFFFFF;
+		background-color: $main1;
+	}
+	.policy-container {
+		padding: 30px;
+		> p {
+			white-space: pre-line;
+			line-height: 180%;
+			font-size: 15px;
+		}
+	}
+	.policy-footer {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		font-size: 1.1vw;
+		font-weight: 600;
+		padding: 20px 30px;
+		color: #FFFFFF;
+		background-color: $main1;
+	}
+
+}

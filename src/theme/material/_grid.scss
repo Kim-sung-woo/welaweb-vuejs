@@ -1,0 +1,20 @@
+[md-raised-button].icon-btn,
+[md-fab].icon-btn,
+[md-mini-fab].icon-btn,
+[md-button].icon-btn,
+[md-icon-button].icon-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  min-width: 0;
+}
+
+[md-raised-button].icon-btn span,
+[md-fab].icon-btn span,
+[md-mini-fab].icon-btn span,
+[md-button].icon-btn span,
+[md-icon-button].icon-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

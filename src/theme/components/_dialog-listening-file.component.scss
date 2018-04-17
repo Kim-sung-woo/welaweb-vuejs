@@ -1,0 +1,94 @@
+#dialog-listening-file {
+  .modal-content {
+    .title {
+			position: relative;
+			display: flex;
+			justify-content: row;
+			font-size: 20px;
+			font-weight: 600;
+			padding: 30px;
+			color: #FFFFFF;
+			background-color: $main1;
+			>div{
+				&:first-child{
+					width: 40%;
+				}
+				&:last-child{
+					width: 60%;
+					text-align: right;
+					font-weight: 400;
+					padding-right: 40px;
+					i{
+						position: absolute;
+						right: 20px;
+						top: 20px;
+						font-size: 40px;
+						cursor: pointer;
+					}
+				}
+			}
+    }
+	}
+	.content-container{
+		padding: 20px 30px;
+		ul{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			li{
+				height: 50px;
+				line-height: 50px;
+				&:nth-child(1){
+					width: 25%;
+					color: $grey9;
+				}
+				&:nth-child(2){
+					width: 50%;
+				}
+				&:nth-child(3){
+					width: 25%;
+				}
+				input{
+					width: 95%;
+					height: 30px;
+					box-sizing:border-box;
+					padding-left: 10px;
+				}
+				select{
+					width: 95%;
+					height: 30px;
+					padding: 0px 20px;
+					border-radius: 20px;
+					font-size: 18px;
+					border: none;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					background: url('~/assets//img/ic_arrow_down.png') no-repeat 95% 50%;
+					background-color: $grey4;
+				}
+			}
+			&:nth-child(3){
+				li{
+					div{
+						background-color: $grey9;
+						height: 30px;
+						line-height: 30px;
+						width: 100px;
+						margin: 12px auto;
+						color: #FFFFFF;
+						font-size: 14px;
+						font-weight: 600;
+						text-align: center;
+						cursor: pointer;
+					}
+				}
+			}
+			&:nth-child(4){
+				color: $grey7;
+			}
+		}
+	}
+
+}
+

@@ -1,0 +1,53 @@
+release-status {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 32px;
+	margin-bottom: 60px;
+	.step-container {
+		display: flex;
+		align-items: center;
+
+		.step-panel {
+			position: relative;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			> img {
+				width: 80px;
+			}
+			.step-label {
+				position: absolute;
+				bottom: -30px;
+				white-space:nowrap;
+
+				font-size: 18px;
+				font-weight: 200;
+				color: #999999;
+
+				&.writing {
+					color: $positive;
+				}
+				&.done {
+					color: #444444;
+				}
+			}
+		}
+		.dotted-line {
+			height: 1px;
+			margin-left: 12px;
+			margin-right: 12px;
+			width: 200px;
+			&.none {
+				border-bottom: dotted 2px #999999;
+			}
+			&.done {
+				border-bottom: dotted 2px #5aca5a;
+			}
+			&.writing {
+				border-bottom: dotted 2px $positive;
+			}
+		}
+	}
+}

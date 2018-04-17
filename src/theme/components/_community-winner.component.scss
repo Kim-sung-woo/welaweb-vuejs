@@ -1,0 +1,369 @@
+community-winner {
+	#community-winner {
+		.header-container {
+			width: 100%;
+			height: 23vw;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			background-image: url('~/assets//img/main_intro.png');
+			background-position-y: 0;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			.user-action-wrapper {
+				display: flex;
+				justify-content: flex-end;
+				margin-top: 30px;
+				margin-right: 120px;
+				> span {
+					font-size: 13px;
+					font-weight: 900;
+					color: $white;
+					margin-right: 20px;
+					cursor: pointer;
+				}
+			}
+			.title-wrapper {
+				display: flex;
+				flex-direction: column;
+				margin: auto auto;
+				> div:first-child {
+					color: $white;
+					font-size: 2.3vw;
+					font-weight: 400;
+					margin-right: 340px;
+					margin-bottom: 25px;
+				}
+				> div:last-child {
+					color: $white;
+					font-size: 3.5vw;
+					font-weight: 900;
+					margin-left: 130px;
+				}
+			}
+		}
+
+		.winner-container {
+			width: 100%;
+			height: 100%;
+			.center-wrapper {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				.center-first-panel {
+					position: relative;
+					margin-top: 100px;
+					height: 100px;
+					width: 58%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					.img-title {
+						width: 50%;
+						height: 100px;
+						text-align: center;
+						background-image: url("~/assets//img/winner_title.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> div {
+							margin-top: 15px;
+						}
+						> div:last-child {
+							font-size: 36px;
+							font-weight: 600;
+						}
+					}
+				}
+
+				.center-second-panel {
+					position: relative;
+					margin-top: 50px;
+					width: 58%;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					align-items: center;
+					.ranking-title {
+						background-color: $main5;
+						border-radius: 25px;
+						width: 33%;
+						height: 50px;
+						line-height: 50px;
+						color: #FFF;
+						font-size: 1.05vw;
+						font-weight: 600;
+						text-align: center;
+						margin-bottom: 50px;
+					}
+					.ranking-wrapper {
+						display: flex;
+						justify-content: center;
+						flex-direction: row;
+						align-items: center;
+						div {
+							width: 7.813vw;
+							height: 7.813vw;
+							display: flex;
+							justify-content: center;
+						}
+					}
+					.ranking1 {
+						background-image: url("~/assets//img/winner_1.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 3.5vw;
+						}
+						> span:last-child {
+							margin-top: 3.6vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking2 {
+						background-image: url("~/assets//img/winner_2.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking3 {
+						background-image: url("~/assets//img/winner_3.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking4 {
+						background-image: url("~/assets//img/winner_4.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking5 {
+						background-image: url("~/assets//img/winner_5.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking6 {
+						background-image: url("~/assets//img/winner_6.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking7 {
+						background-image: url("~/assets//img/winner_7.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking8 {
+						background-image: url("~/assets//img/winner_8.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking9 {
+						background-image: url("~/assets//img/winner_9.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+					.ranking10 {
+						background-image: url("~/assets//img/winner_10.png");
+						background-repeat: no-repeat;
+						background-size: 100%;
+						> span:first-child {
+							margin-right: 5px;
+							font-size: 1.05vw;
+							font-weight: 600;
+							margin-top: 2.8vw;
+						}
+						> span:last-child {
+							margin-top: 2.9vw;
+							font-size: 0.83vw;
+						}
+					}
+				}
+
+				.center-third-panel {
+					margin-top: 50px;
+					margin-bottom: 200px;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					align-items: center;
+					.ranking-title {
+						background-color: $main5;
+						border-radius: 25px;
+						width: 19.1%;
+						height: 50px;
+						line-height: 50px;
+						color: #FFF;
+						font-size: 1.05vw;
+						font-weight: 600;
+						text-align: center;
+						margin-bottom: 50px;
+					}
+					ul {
+						width: 80%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-wrap: wrap;
+						li {
+							border: 10px solid $main1;
+							border-radius: 5px;
+							background-color: #EFFBF8;
+							width: 140px;
+							height: 145px;
+							margin-top: 0;
+							margin-right: 20px;
+							margin-left: 20px;
+							margin-bottom: 20px;
+							text-align: center;
+							> p {
+								color: $main1;
+								font-size: 16px;
+								height: 35px;
+								line-height: 35px;
+								font-weight: 700;
+							}
+							hr {
+								border: 1.5px solid $main1;
+								opacity: 0.6;
+								width: 60%;
+							}
+							.content {
+								p:first-child {
+									font-size: 24px;
+									font-weight: 600;
+									margin-top: 10px;
+								}
+								p:last-child {
+									margin-top: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.footer-wrapper {
+				width: 100%;
+				background-color: $grey2;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				flex-direction: row;
+				padding-top: 100px;
+				padding-bottom: 50px;
+				.footer-item {
+					width: 15%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					> div:first-child {
+						font-size: 30px;
+						color: $grey5;
+						font-weight: 200;
+					}
+					> div:nth-child(2) {
+						width: 180px;
+						height: 50px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin-bottom: 30px;
+						color: $white;
+						font-size: 18px;
+						font-weight: 600;
+						background-color: $sub1;
+					}
+					> div:nth-child(3), div:nth-child(4), div:nth-child(5), div:last-child {
+						font-size: 15px;
+						font-weight: 500;
+						color: $sub1;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
