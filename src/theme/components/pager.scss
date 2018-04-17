@@ -1,0 +1,85 @@
+pager {
+	display: inline-block;
+	flex: 1 1 80%;
+	text-align: center;
+	.pager,
+	.pager li {
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		list-style: none;
+	}
+	.pager {
+		li, li button {
+			outline: none;
+		}
+
+		li {
+			a {
+				cursor: pointer;
+				display: inline-block;
+			}
+
+			&.disabled button {
+				cursor: not-allowed;
+			}
+		}
+		.page-counter {
+			display: inline-block;
+			font-size: 18px;
+			font-weight: 400;
+			li {
+				// margin-top: 5px;
+			}
+			.current-page{
+				margin-left:20px;
+				margin-right:12px;
+				color: #9ed448;
+			}
+			.total-page {
+				margin-left:12px;
+				margin-right:20px;
+			}
+		}
+	}
+	li {
+		vertical-align: middle;
+
+		&.disabled button {
+			color: rgba(0, 0, 0, 0.26) !important;
+			background-color: transparent !important;
+		}
+
+		&.active button {
+			background-color: rgba(158, 158, 158, 0.2);
+			font-weight: bold;
+		}
+	}
+
+	button {
+		height: 22px;
+		min-width: 24px;
+		line-height: 22px;
+		padding: 0 6px;
+		border-radius: 3px;
+		margin: 6px 3px;
+		text-align: center;
+		vertical-align: top;
+		color: rgba(0, 0, 0, .54);
+		text-decoration: none;
+		&:hover {
+			color: rgba(0, 0, 0, .75);
+			background-color: rgba(158, 158, 158, 0.2);
+		}
+	}
+
+	.icon-left,
+	.icon-skip,
+	.icon-right,
+	.icon-prev {
+		font-size: 20px;
+		line-height: 20px;
+		padding: 0 3px;
+	}
+}
+

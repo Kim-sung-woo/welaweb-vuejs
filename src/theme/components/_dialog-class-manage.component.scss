@@ -1,0 +1,74 @@
+#dialog-class-manage {
+  .modal-content {
+	  .title {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  padding: 20px 30px;
+		  background-color: $main1;
+		  color: #FFFFFF;
+		  span {
+			  font-size: 1.1vw;
+			  font-weight: 600;
+		  }
+		  i{
+			  font-size: 1.8vw;
+			  cursor: pointer;
+		  }
+	  }
+	}
+	.content-container{
+		padding: 20px 30px;
+		ul{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: 20px;
+			border-bottom: 2px solid black;
+			li{
+				text-align: center;
+				padding-bottom: 10px;
+				&:nth-child(1){
+					width: 20%;
+				}
+				&:nth-child(2){
+					width: 7%;
+				}
+				&:nth-child(3){
+					width: 60%;
+				}
+				input{
+					width: 100%;
+					height: 30px;
+					line-height: 25px;
+					text-align: center;
+					box-sizing: border-box;
+					&.detail{
+						text-align: left;
+						padding-left: 10px;
+					}
+				}
+				
+			}
+			&.list-content{
+				border-bottom: 1px solid $grey8;
+				padding-bottom: 10px;
+			}
+		}
+		div.btn-box{
+			div{
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				color: #FFFFFF;
+				background-color: $main1;
+				margin: 20px auto;
+				text-align: center;
+				font-size: 14px;
+				cursor: pointer;
+			}
+		}
+	}
+
+}
+

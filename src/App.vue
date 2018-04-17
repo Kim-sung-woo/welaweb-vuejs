@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <side-nav>
+      <router-view></router-view>
+    </side-nav>
   </div>
 </template>
 
 <script>
+import SideNav from "./components/SideNav";
 
 export default {
   name: 'App',
   components: {
+    SideNav
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import 'theme/global';
 </style>

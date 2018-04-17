@@ -34,6 +34,6 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new FriendlyErrorsPlugin(),
     // generate favicons
-    new FaviconsWebpackPlugin(path.resolve(__dirname, '../static/logo.png'))
+    new FaviconsWebpackPlugin(path.resolve(__dirname, '../static/favicon.ico'))
   ]
 })

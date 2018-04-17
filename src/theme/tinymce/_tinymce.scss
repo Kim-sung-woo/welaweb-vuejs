@@ -1,0 +1,14 @@
+tiny-mce {
+  .mce-tinymce,
+  .mce-edit-area {
+    width: 99.8%;
+    border: solid 1px $grey4;
+  }
+  .mce-panel {
+    background-color: white;
+    .mce-btn {
+      background-color: white;
+    }
+  }
+
+}

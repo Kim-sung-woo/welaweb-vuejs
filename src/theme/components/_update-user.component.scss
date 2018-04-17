@@ -1,0 +1,237 @@
+update-user {
+	#update-user {
+		.header-container {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			border-bottom: 1px solid $grey5;
+			.user-action-wrapper {
+				display: flex;
+				justify-content: flex-end;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-right: 120px;
+				> span {
+					font-size: 13px;
+					//font-weight: 900;
+					color: $sub1;
+					margin-right: 20px;
+				}
+			}
+		}
+
+		.update-title-container {
+			width: 50%;
+			margin: 80px auto 0;
+			> div:first-child {
+				width: 100%;
+				margin-bottom: 40px;
+				display: flex;
+				justify-content: flex-start;
+				font-size: 32px;
+				font-weight: 700;
+				color: $sub1;
+			}
+
+			> div:last-child {
+				width: 100%;
+				margin-bottom: 30px;
+				display: flex;
+				justify-content: flex-start;
+				font-size: 18px;
+				color: $grey8;
+			}
+		}
+
+		form {
+			width: 50%;
+			margin: 0 auto 200px;
+			display: flex;
+			flex-direction: column;
+			border-top: 2px solid $grey7;
+			.input-wrapper {
+				display: flex;
+				border-bottom: 1px solid $grey7;
+				.label-panel {
+					width: 25%;
+					padding-top: 20px;
+					padding-bottom: 20px;
+					padding-left: 4%;
+					color: $black;
+					font-size: 16px;
+					font-weight: 500;
+					background-color: $grey2;
+				}
+				.input-panel {
+					width: 75%;
+					padding-left: 3.5%;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					> input {
+						width: 55%;
+						padding-left: 1%;
+						height: 30px;
+						font-size: 16px;
+						color: $sub1;
+						&::-webkit-input-placeholder {
+							font-size: 16px;
+						}
+						&:-moz-placeholder {
+							font-size: 16px;
+						}
+						&::-moz-placeholder {
+							font-size: 16px;
+						}
+					}
+				}
+				&:first-child {
+					.input-panel {
+						display: flex;
+						flex-direction: row;
+						> div {
+							width: 48%;
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+							padding-left: 1%;
+							border: 1px solid $grey5;
+						}
+						.icon-btn {
+							width: 9%;
+							height: 40px;
+							background-color: $grey7;
+							cursor: pointer;
+							.mat-button-wrapper {
+								span:first-child {
+									margin-top: 3px;
+									font-size: 15px;
+									font-weight: 500;
+									color: #ffffff;
+								}
+							}
+						}
+						> span {
+							padding-top: 14px;
+							padding-bottom: 10px;
+							padding-left: 10px;
+							font-size: 15px;
+							font-weight: 600;
+							color: $main1;
+						}
+					}
+				}
+
+				&:nth-child(6) {
+					.input-panel {
+						display: flex;
+						flex-direction: row;
+						.select-area {
+							display: flex;
+							align-items: center;
+							> select {
+								width: 80px;
+								height: 36px;
+								padding-left: 5px;
+								border: 1px solid $grey5;
+								border-radius: 0px; /* iOS 둥근모서리 제거 */
+								font-size: 14px;
+								color: $sub1;
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								appearance: none;
+								background: url('~/assets//img/ic_arrow_drop.png') no-repeat 94% 50%;
+							}
+							> select::-ms-expand {
+								display: none;
+							}
+							> span {
+								margin-top: 3px;
+								margin-left: 5px;
+								margin-right: 15px;
+							}
+						}
+					}
+				}
+
+				&:nth-child(7){
+					.input-panel {
+						> input {
+							width: 14.5%;
+						}
+						> span {
+							margin-left:11px;
+							margin-right:11px;
+						}
+					}
+				}
+
+				&:nth-child(8){
+					.input-panel {
+						> input:first-child {
+							width: 28%;
+						}
+						> input:nth-child(3) {
+							width: 5%;
+						}
+						> span {
+							margin-left:11px;
+							margin-right:11px;
+						}
+					}
+				}
+
+				&:nth-child(9){
+					.input-panel {
+						> input {
+							margin-bottom: 10px;
+						}
+						> input:first-child {
+							width: 18%;
+						}
+						> .icon-btn {
+							width: 25%;
+							height: 34px;
+							margin-left: 15px;
+							background-color: $grey7;
+							cursor: pointer;
+							border-radius: 10px;
+							.mat-button-wrapper {
+								span:first-child {
+									font-size: 15px;
+									font-weight: 500;
+									color: #ffffff;
+								}
+							}
+						}
+						> input:last-child {
+							margin-bottom: 0px;
+						}
+					}
+				}
+			}
+
+			.submit-wrapper {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				.icon-btn {
+					width: 160px;
+					height: 45px;
+					margin-top: 40px;
+					background-color: $main1;
+					cursor: pointer;
+					border-radius: 10px;
+					.mat-button-wrapper {
+						span:first-child {
+							margin-top: 3px;
+							font-size: 19px;
+							font-weight: 500;
+							color: #ffffff;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -63,21 +63,21 @@
   }
 </script>
 
-<style lang="scss">
-  .post {
-    .banner {
-      background-color: yellowgreen;
-      margin-bottom: 0px;
-    }
+<!--<style lang="scss">-->
+  <!--.post {-->
+    <!--.banner {-->
+      <!--background-color: yellowgreen;-->
+      <!--margin-bottom: 0px;-->
+    <!--}-->
 
-    .article-meta {
-      padding: 0 3%;
-    }
+    <!--.article-meta {-->
+      <!--padding: 0 3%;-->
+    <!--}-->
 
-    div.post-content {
-      padding: 0 3%;
-      margin: 0 1.5rem 0 0.3rem;
-      font-size: 1em;
-    }
-  }
-</style>
+    <!--div.post-content {-->
+      <!--padding: 0 3%;-->
+      <!--margin: 0 1.5rem 0 0.3rem;-->
+      <!--font-size: 1em;-->
+    <!--}-->
+  <!--}-->
+<!--</style>-->

@@ -1,0 +1,220 @@
+intro-greeting {
+  #intro-greeting {
+	  .header-container {
+		  width:100%;
+		  height: 23vw;
+		  position: relative;
+		  display: flex;
+		  flex-direction: column;
+		  background-image: url('~/assets//img/main_intro.png');
+		  background-position-y: 0;
+		  background-size: 100%;
+		  background-repeat: no-repeat;
+		  .user-action-wrapper {
+			  display: flex;
+			  justify-content: flex-end;
+			  margin-top: 30px;
+			  margin-right: 120px;
+			  > span {
+				  font-size: 13px;
+				  font-weight: 900;
+				  color: $white;
+				  margin-right: 20px;
+				  cursor: pointer;
+			  }
+		  }
+
+		  .title-wrapper {
+			  height:70%;
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: center;
+			  align-items: center;
+			  > div:first-child {
+				  color: $white;
+				  font-size: 2.3vw;
+				  font-weight: 400;
+				  margin-right: 340px;
+				  margin-bottom: 25px;
+			  }
+			  > div:last-child {
+				  color: $white;
+				  font-size: 3.5vw;
+				  font-weight: 900;
+				  margin-left: 130px;
+			  }
+		  }
+
+		  .link-wrapper {
+			  width:100%;
+			  position: absolute;
+			  bottom: 7%;
+			  display: flex;
+			  justify-content: center;
+			  > img {
+				  margin-right: .7%;
+				  cursor: pointer;
+			  }
+		  }
+	  }
+
+    .greeting-container {
+      width: 100%;
+      height: 100%;
+      .center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .center-first-panel {
+					position: relative;
+					margin-top: 50px;
+          height: 450px;
+					width: 58%;
+          display: flex;
+          flex-direction: column;
+					align-items: center;
+	        background-color: $grey2;
+	        border-radius: 30px;
+					.info-label{
+						margin-top: 50px;
+						font-size: 1.6vw;
+						font-weight: 500;
+					}
+					.campus-info{
+						margin-top: 50px;
+						display: flex;
+						flex-direction: row;
+						width: 72%;
+						height: 230px;
+						background-color: $white;
+						.left-campus-info {
+							width: 30%;
+							.left-campus-info-wrapper {
+								padding-top: 30px;
+								padding-left: 50%;
+								display: flex;
+								flex-direction: column;
+								.info-item {
+									display: flex;
+									justify-content: flex-start;
+									height: 40px;
+									font-size: 0.9vw;
+								}
+							}
+						}
+						.border-area {
+							width: 2px;
+							height: 100%;
+							.line {
+								width: 1px;
+								height: 75%;
+								margin-top: 34px;
+								background-color: $grey5;
+							}
+						}
+						.right-campus-info {
+							width: 70%;
+							.right-campus-info-wrapper {
+								display: flex;
+								flex-direction: column;
+								padding-top: 30px;
+								padding-left: 10%;
+								margin-right: 10%;
+								.info-item {
+									display: flex;
+									justify-content: flex-start;
+									height: 40px;
+									line-height:120%;
+									font-size: 0.9vw;
+								}
+							}
+						}
+					}
+        }
+
+        .center-second-panel {
+					position: relative;
+					margin-top: 150px;
+					margin-bottom: 100px;
+					width: 58%;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          >div{
+						margin-top: 30px;
+						.label{
+							font-size: 24px;
+							font-weight: 500;
+							text-align: center;
+						}
+						.content{
+							font-size: 16px;
+							font-weight: 400;
+							p{
+								margin: 20px;
+								text-align: center;
+							}
+						}
+					}
+					.co-name{
+						text-align: center;
+						div{
+							display: inline-block;
+						}
+						.co-label{
+							font-size:14px;
+						}
+						.co-name{
+							font-size:1.1vw;
+							font-weight: 600;
+						}
+					}
+        }
+
+      }
+
+      .footer-wrapper {
+        width: 100%;
+        background-color: $grey2;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: row;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        .footer-item {
+          width: 15%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          > div:first-child {
+            font-size: 30px;
+            color: $grey5;
+            font-weight: 200;
+          }
+          > div:nth-child(2) {
+            width: 180px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: $sub1;
+          }
+          > div:nth-child(3), div:nth-child(4), div:nth-child(5), div:last-child {
+            font-size: 15px;
+            font-weight: 500;
+            color: $sub1;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

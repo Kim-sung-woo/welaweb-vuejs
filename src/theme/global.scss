@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Variable
+@import 'variables';
+
+// Project root
+@import 'reset';
+@import 'fix';
+
+// Third party
+@import 'material/overlay';
+@import 'material/grid';
+@import 'material/indigo-pink';
+@import 'angular2-modal/modal';
+@import 'vex/vex';
+@import 'vex/vex-theme-flat-attack';
+@import 'datatable/datatable';
+@import 'datatable/icons';
+@import 'ng2-tag-input/tag-input.style';
+@import 'preload-image/preload-image';
+@import 'quill/quill.core';
+@import 'quill/quill.snow';
+@import 'slimscroll/slimscroll';
+@import 'components/spinner';
+@import 'swiper/swiper';
+@import 'tooltip/tooltip';
+@import 'tinymce/_tinymce';
+
+// Project Global
+@import 'functions';
+@import 'animation';
+@import 'common';
+@import 'components/pager';
+
+// Components
+@import 'components/app.component';
+@import 'components/sidenav.component';
+@import 'components/footer.component';
+@import 'components/dialog-message';
+@import 'components/daum-map.component';
+@import 'components/dialog-campus.component';
+@import 'components/dialog-grade-record.component';
+@import 'components/dialog-grade-listening.component';
+@import 'components/dialog-grade-attend.component';
+@import 'components/dialog-grade-additional.component';
+@import 'components/dialog-class-manage.component';
+@import 'components/dialog-listening-file.component';
+@import 'components/dialog-listening-textbook.component';
+@import 'components/dialog-listening-booklist.component';
+@import 'components/banner.component';
+@import 'components/usage-policy.component';
+@import 'components/private-policy.component';
+
+//pages
+@import 'components/intro.component';
+@import 'components/intro-greeting.component';
+@import 'components/wela-brand.component';
+@import 'components/book-info.component';
+@import 'components/priodical-education.component';
+@import 'components/join-member.component';
+@import 'components/register-user.component';
+@import 'components/community-winner.component';
+@import 'components/community-photo.component';
+@import 'components/post.component';
+@import 'components/post-detail.component';
+@import 'components/post-manage.component';
+@import 'components/grade.component';
+@import 'components/grade-detail.component';
+@import 'components/listening-reading.component';
+@import 'components/student-grade.component';
+@import 'components/user-find.component';
+@import 'components/update-user.component';
+@import 'components/studentmanage-list.component';
+@import 'components/studentmanage-detail.component';
+@import 'components/class-manage.component';
+
