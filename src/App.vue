@@ -3,6 +3,8 @@
     <side-nav>
       <router-view></router-view>
     </side-nav>
+
+    <v-dialog/>
   </div>
 </template>
 

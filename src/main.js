@@ -2,38 +2,22 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from '@/router'
-import store from '@/store'
-import { CHECK_AUTH } from '@/store/actions.type'
-
-import ApiService from '@/common/api.service'
-import DateFilter from '@/common/date.filter'
-import ErrorFilter from '@/common/error.filter'
-
 import axios from 'axios'
+import router from '@/router'
+
+//External Component
+import VModal from 'vue-js-modal'
 
 Vue.prototype.$http = axios
-
 Vue.config.productionTip = false
-Vue.filter('date', DateFilter)
-Vue.filter('error', ErrorFilter)
+// Vue.filter('date', DateFilter)
+// Vue.filter('error', ErrorFilter)
 
-ApiService.init()
+Vue.use(VModal, { dialog: true })
 
-// Ensure we checked auth before each page load.
-router.beforeEach(
-  (to, from, next) => {
-    return Promise
-      .all([store.dispatch(CHECK_AUTH)])
-      .then(next)
-  },
-)
-
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  store,
   template: '<App/>',
   components: { App }
 })
