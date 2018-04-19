@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "intro"
+        name: "CommunityWinner"
     }
 </script>
 
