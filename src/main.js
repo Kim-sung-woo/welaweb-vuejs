@@ -10,8 +10,6 @@ import VModal from 'vue-js-modal'
 
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
-// Vue.filter('date', DateFilter)
-// Vue.filter('error', ErrorFilter)
 
 Vue.use(VModal, { dialog: true })
 
@@ -19,5 +17,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
 })

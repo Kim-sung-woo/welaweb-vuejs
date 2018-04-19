@@ -6,7 +6,7 @@ community-photo {
 		  position: relative;
 		  display: flex;
 		  flex-direction: column;
-		  background-image: url('~/assets//img/main_intro.png');
+		  background-image: url('assets//img/main_intro.png');
 		  background-position-y: 0;
 		  background-size: 100%;
 		  background-repeat: no-repeat;
@@ -210,7 +210,7 @@ community-photo {
 							.prevEnd {
 								width: 30px;
 								height: 30px;
-								background-image: url('~/assets//img/ic_left_all_black.png');
+								background-image: url('assets//img/ic_left_all_black.png');
 								background-repeat: no-repeat;
 								background-size: auto 15px;
 								background-position-x: 7px;
@@ -220,7 +220,7 @@ community-photo {
 							.nextEnd {
 								width: 30px;
 								height: 30px;
-								background-image: url('~/assets//img/ic_right_all_black.png');
+								background-image: url('assets//img/ic_right_all_black.png');
 								background-repeat: no-repeat;
 								background-size: auto 15px;
 								background-position-x: 10px;
@@ -229,7 +229,7 @@ community-photo {
 							.prev1 {
 								width: 30px;
 								height: 30px;
-								background-image: url('~/assets//img/ic_left_black.png');
+								background-image: url('assets//img/ic_left_black.png');
 								background-repeat: no-repeat;
 								background-size: auto 15px;
 								background-position-x: 10px;
@@ -238,7 +238,7 @@ community-photo {
 							.next1 {
 								width: 30px;
 								height: 30px;
-								background-image: url('~/assets//img/ic_right_black.png');
+								background-image: url('assets//img/ic_right_black.png');
 								background-repeat: no-repeat;
 								background-size: auto 15px;
 								background-position-x: 13px;
@@ -247,16 +247,16 @@ community-photo {
 						}
 						li.action.disabled {
 							.prevEnd {
-								background-image: url('~/assets//img/ic_left_all_grey.png');
+								background-image: url('assets//img/ic_left_all_grey.png');
 							}
 							.nextEnd {
-								background-image: url('~/assets//img/ic_right_all_grey.png');
+								background-image: url('assets//img/ic_right_all_grey.png');
 							}
 							.prev1 {
-								background-image: url('~/assets//img/ic_left_grey.png');
+								background-image: url('assets//img/ic_left_grey.png');
 							}
 							.next1 {
-								background-image: url('~/assets//img/ic_right_grey.png');
+								background-image: url('assets//img/ic_right_grey.png');
 							}
 						}
 					}
@@ -295,7 +295,7 @@ community-photo {
 						-webkit-appearance: none;
 						-moz-appearance: none;
 						appearance: none;
-						background: url('~/assets//img/ic_arrow_down.png') no-repeat 94% 50%;
+						background: url('assets//img/ic_arrow_down.png') no-repeat 94% 50%;
 					}
 					> select::-ms-expand {
 						display: none;
