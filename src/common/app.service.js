@@ -1,7 +1,7 @@
 export default {
   setToken(token) {
     if (token)
-      window.localStorage.setItem('wela_token', JSON.stringify(token));
+      window.localStorage.setItem('wela_token', token);
     else
       window.localStorage.removeItem('wela_token');
   },

@@ -61,17 +61,14 @@
       .icon-btn {
         width: 80%;
         height: 47px;
+        padding-top: 3px;
         border-radius: 30px;
         background-color: $main1;
         cursor: pointer;
-        .mat-button-wrapper {
-          span:first-child {
-            margin-top: 3px;
-            font-size: 19px;
-            font-weight: 500;
-            color: #ffffff;
-          }
-        }
+        font-size: 19px;
+        font-weight: 500;
+        color: #ffffff;
+        border: none;
       }
     }
 
@@ -209,19 +206,25 @@
           }
         }
         .icon-btn {
+          display:flex;
+          justify-content: center;
+          align-items: center;
           width: 100%;
           height: 30px;
           margin-top: 15px;
           border-radius: 15px;
           background-color: $main1;
           cursor: pointer;
-          .mat-button-wrapper {
-            height: 30px;
-            margin-top: 1px;
-            font-size: 0.8vw;
-            font-weight: 700;
-            color: #ffffff;
-          }
+          font-size: 0.8vw;
+          font-weight: 700;
+          color: #ffffff;
+          //.mat-button-wrapper {
+          //  height: 30px;
+          //  margin-top: 1px;
+          //  font-size: 0.8vw;
+          //  font-weight: 700;
+          //  color: #ffffff;
+          //}
         }
       }
     }
@@ -317,10 +320,10 @@
                 font-weight: 500;
                 color: $sub1;
 
-                &.active {
+                &.router-link-active {
                   color: $main1;
                 }
-                .nav-sub-label.active > div {
+                .nav-sub-label.router-link-active > div {
                   color: $main1;
                 }
 

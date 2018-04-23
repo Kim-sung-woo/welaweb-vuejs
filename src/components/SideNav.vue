@@ -7,6 +7,7 @@
 
       <div class="beforelogin-sidenav-container"
            v-if="!user">
+        <form v-on:submit.prevent="submit">
           <div class="input-wrapper">
             <input type="text"
                    v-model="identifier"
@@ -17,11 +18,11 @@
           </div>
 
           <div class="login-btn-wrapper">
-            <button class="icon-btn"
-                    v-on:click="submit">
+            <button class="icon-btn">
               <span>로그인하기</span>
             </button>
           </div>
+        </form>
 
 
         <div class="login-text-wrapper">
@@ -34,12 +35,11 @@
                    v-if="isKeepLogin">
               <span>로그인 상태 유지</span>
             </div>
-            <!--<div v-on:click="gotoRoute('before-login/user-find')">아이디 / 비밀번호 찾기</div>-->
-            <div>아이디 / 비밀번호 찾기</div>
+            <div v-on:click="gotoRoute('/before-login/user-find')">아이디 / 비밀번호 찾기</div>
           </div>
-          <!--<div class="login-last-panel"-->
-          <!--v-on:click="gotoRoute('before-login/register-user')">-->
-          <div class="login-last-panel">
+
+          <div class="login-last-panel"
+               v-on:click="gotoRoute('/before-login/register-user')">
             아직 회원이 아니신가요? <span>회원가입</span>
           </div>
         </div>
@@ -83,7 +83,7 @@
            v-else-if="user && user.role == '학생'">
         <div class="info-wrapper">
           <div class="left-panel">
-            <img src="assets/img/ic_student.png">
+            <img src="../assets/img/ic_student.png">
             <div>
               <span>현재 성적</span>
               <span>{{totalScore}}점</span>
@@ -126,8 +126,8 @@
                   {{menuItem.label}}
                 </div>
                 <div class="nav-sub-items"
-                     v-bind:class="{'closed': !menuItem.children || !isActiveUrl('/student/' + menuItem.path) || menuItem.closed}"
-                     v-bind:style.height="getSubMenuHeight(menuItem)">
+                     :class="{'closed': !menuItem.children || !isActiveUrl('/student/' + menuItem.path) || menuItem.closed}"
+                     :style="{ height : getSubMenuHeight(menuItem) }">
                   <div v-for="(childMenu, j) in menuItem.children"
                        v-bind:class="{'last-item' : j == (menuItem.children.length -1)}">
                     <div class="nav-sub-items-header"
@@ -136,12 +136,11 @@
                     </div>
                     <div class="nav-sub-item"
                          v-if="childMenu.path">
-                      <div class="nav-sub-label"
-                           v-bind:class="{'last-label' : j == (menuItem.children.length -1)}"
-                           [routerLink]="['/'+currentSideMenuItems.path+'/'+menuItem.path+'/' + childMenu.path]"
-                           [routerLinkActive]="['active']">
+                      <router-link class="nav-sub-label"
+                                   v-bind:class="{'last-label' : j == (menuItem.children.length -1)}"
+                                   v-bind:to="{path: '/'+currentSideMenuItems.path+'/'+menuItem.path+'/' + childMenu.path}">
                         <div>{{childMenu.label}}</div>
-                      </div>
+                      </router-link>
                     </div>
                   </div>
                 </div>
@@ -152,6 +151,72 @@
         <!--학생 nav-list 종료-->
       </div>
       <!--학생 sidenav container 종료-->
+
+      <!--선생님 sidenav container 시작-->
+      <div class="sidenav-container teacher"
+           v-else-if="user && (user.role == '원장님' || user.role == '정회원 선생님' || user.role == '준회원 원장님' || user.role == '준회원 선생님')">
+        <div class="info-wrapper">
+          <div class="left-panel">
+            <img src="../assets/img/ic_teacher.png">
+          </div>
+          <div class="right-panel">
+            <div>{{user.campus.campusName}}</div>
+            <div>
+              <span>{{user.name}}</span>
+              <span>님</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <div class="logout-btn"
+               v-on:click="logOut()">
+            로그아웃
+          </div>
+          <router-link class="modify-info-btn"
+                       :to="{ path: '/before-login/register-user', query: { isEditMode: true }}">
+            내 정보 수정
+          </router-link>
+        </div>
+
+        <!--선생님 nav-list 시작-->
+        <div class="nav-list-wrapper">
+          <div class="nav-items"
+               v-if="currentSideMenuItems">
+            <div v-for="(menuItem, i) in currentSideMenuItems.children">
+              <div class="nav-item"
+                   v-if="menuItem.path">
+                <div class="nav-item-label"
+                     v-on:click="menuToggle(menuItem)"
+                     v-bind:class="{'active': isActiveUrl(menuItem.path)}">
+                  {{menuItem.label}}
+                </div>
+                <div class="nav-sub-items"
+                     v-bind:class="{'closed': !menuItem.children || !(isActiveUrl('/regular-academy/' + menuItem.path) || isActiveUrl('/associate-academy/' + menuItem.path)) || menuItem.closed}"
+                     v-bind:style="{ height: getSubMenuHeight(menuItem) }">
+                  <div v-for="(childMenu, j) in menuItem.children"
+                       v-bind:class="{'last-item' : j == (menuItem.children.length -1)}">
+                    <div class="nav-sub-items-header"
+                         v-if="childMenu.headerText">
+                      {{childMenu.headerText}}
+                    </div>
+                    <div class="nav-sub-item"
+                         v-if="childMenu.path">
+                      <router-link class="nav-sub-label"
+                                   v-bind:class="{'last-label' : j == (menuItem.children.length -1)}"
+                                   v-bind:to="{path: '/'+currentSideMenuItems.path+'/'+menuItem.path+'/' + childMenu.path}">
+                        <div>{{childMenu.label}}</div>
+                      </router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--선생님 nav-list 종료-->
+      </div>
+      <!--선생님 sidenav container 종료-->
 
       <div class="contact-wrapper">
         <div>
@@ -174,37 +239,54 @@
   import {Observable, from, of, range} from 'rxjs';
   import _ from 'lodash'
   import {API_URL} from '@/common/config'
-  import AppService from '@/common/app.service'
   import {routes} from '../router/index'
+
+  //Vue.js Services
+  import AppService from '@/common/app.service'
+  import AuthService from '@/common/auth.service'
+  import BannerService from '@/common/banner.service'
+  import CampusService from '@/common/campus.service'
+  import PointService from '@/common/point.service'
 
   export default {
     name: "SideNav",
-    mixins: [AppService],
+    mixins: [
+      AppService,
+      AuthService,
+      BannerService,
+      CampusService,
+      PointService
+    ],
     data() {
       return {
         //for Login
         identifier: null,
         password: null,
 
-        //for LocalStorage
+        //for user info in localStorage
         user: null,
         token: '',
         isKeepLogin: null,
-        totalScore: 0,
 
         //for util variable
         currentSideMenuItems: [],
         sideMenuType: '',
+
+        //for point
+        pointers: [],
+        totalScore: 0,
+
+        //for admin
+        selectedCampus: {},
+        campuses: []
       }
     },
     created() {
       this.isKeepLogin = !!AppService.getKeepLogin();
 
       if (!this.isKeepLogin) {
-        //TODO: 자동로그인 설정이 안되어 있을 때
-        // this.router.navigateByUrl('before-login/intro');
-        // this.logOut();
-        this.$router.push({ path: '/before-login/intro'});
+        this.$router.push({path: '/before-login/intro'});
+        this.logOut();
 
       } else {
         //TODO: 자동로그인 설정되어 true 일 때
@@ -246,25 +328,23 @@
           this.sideMenuType = "";
         }
 
-        console.log("routes:::\n", routes)
-
-        // switch (this.sideMenuType) {
-        //   case "student":
-        //     this.currentSideMenuItems = _.find(routes, {path: "student"});
-        //     break;
-        //   case "admin":
-        //     this.currentSideMenuItems = _.find(routes, {path: "admin"});
-        //     break;
-        //   case "regular-academy":
-        //     this.currentSideMenuItems = _.find(routes, {path: "regular-academy"});
-        //     break;
-        //   case "associate-academy":
-        //     this.currentSideMenuItems = _.find(routes, {path: "associate-academy"});
-        //     break;
-        //   default:
-        //     this.currentSideMenuItems = _.find(routes, {path: "before-login"});
-        //     break;
-        // }
+        switch (this.sideMenuType) {
+          case "student":
+            this.currentSideMenuItems = _.find(routes[0].children, {path: "student"});
+            break;
+          case "admin":
+            this.currentSideMenuItems = _.find(routes[0].children, {path: "admin"});
+            break;
+          case "regular-academy":
+            this.currentSideMenuItems = _.find(routes[0].children, {path: "regular-academy"});
+            break;
+          case "associate-academy":
+            this.currentSideMenuItems = _.find(routes[0].children, {path: "associate-academy"});
+            break;
+          default:
+            this.currentSideMenuItems = _.find(routes[0].children, {path: "before-login"});
+            break;
+        }
       },
 
       isValid() {
@@ -275,42 +355,8 @@
 
         return true;
       },
-      showModal(title, message) {
-        this.$modal.show('dialog', {
-          title: title,
-          text: message,
-          buttons: [
-            {
-              title: '확인'
-            }
-          ]
-        })
-      },
-
-      toggleKeepLogin() {
-        this.isKeepLogin = !this.isKeepLogin;
-        AppService.setKeepLogin(this.isKeepLogin);
-      },
-
-      isActiveUrl(url) {
-        return this.$router.fullPath.indexOf(url) >= 0;
-      },
-
-      gotoRoute(path, params) {
-        //TODO: 새 페이지 진입 시 스크롤 top으로 설정
-        // this.navContent.nativeElement.scrollTop = 0;
-        // if (!params) {
-        //   this.router.navigateByUrl(path);
-        // } else {
-        //   this.router.navigate([path], {queryParams: params})
-        // }
-
-        this.$router.push({path: path});
-      },
 
       menuToggle(item) {
-        // this.navContent.nativeElement.scrollTop = 0;
-
         let url = '/' + this.sideMenuType + '/' + item.path;
         if (!this.isActiveUrl(url)) {
           item.closed = false;
@@ -318,7 +364,23 @@
           item.closed = !item.closed;
         }
 
-        this.router.navigateByUrl(url);
+        this.$router.push({path: url})
+      },
+
+      gotoRoute(path, params) {
+        if (!params) {
+          this.$router.push({path: path});
+        } else {
+          this.$router.push({path: path, query: params});
+        }
+      },
+
+      isActiveUrl(url) {
+        return this.$router.history.current.path.indexOf(url) >= 0;
+      },
+
+      updateUser() {
+        this.user = AppService.getUser();
       },
 
       getSubMenuHeight(item) {
@@ -339,6 +401,23 @@
         return (childCount * 45) + 15 + "px";
       },
 
+      showModal(title, message) {
+        this.$modal.show('dialog', {
+          title: title,
+          text: message,
+          buttons: [
+            {
+              title: '확인'
+            }
+          ]
+        })
+      },
+
+      toggleKeepLogin() {
+        this.isKeepLogin = !this.isKeepLogin;
+        AppService.setKeepLogin(this.isKeepLogin);
+      },
+
       /*****************************
        *       helper functions
        *****************************/
@@ -347,11 +426,37 @@
         if (this.isValid()) {
           return Observable.fromPromise(axios.post(API_URL + '/login',
             {identifier: this.identifier, password: this.password}))
+            .finally(() => {
+              if (this.user && this.user.role !== '관리자')
+                this.loadBanner();
+            })
             .subscribe(result => {
               AppService.setToken(result.data.token);
               AppService.setUser(result.data.user);
               this.user = result.data.user;
-              console.log("this.user.role:::\n", this.user.role)
+              this.token = result.data.token;
+
+              if (this.user.role === "학생") {
+                this.$router.push({path: '/student/campus-intro/intro'})
+                this.pointCreate();
+              }
+              else if (this.user.role === "관리자") {
+                this.$router.push({path: '/admin/teacher-group/welanews'})
+                this.loadCampuses();
+              }
+              else if (this.user.role === "원장님") {
+                this.$router.push({path: '/regular-academy/wela-english/intro'})
+              }
+              else if (this.user.role === "정회원 선생님") {
+                this.$router.push({path: '/regular-academy/wela-english/intro'})
+              }
+              else if (this.user.role === "준회원 원장님") {
+                this.$router.push({path: '/associate-academy/wela-english/intro'})
+              }
+              else if (this.user.role === "준회원 선생님") {
+                this.$router.push({path: '/associate-academy/wela-english/intro'})
+              }
+              this.initCurrentSideMenu();
             }, error => {
               switch (error.response.status) {
                 case 401:
@@ -383,22 +488,115 @@
         }
       },
 
+      loadBanner() {
+        let params = {
+          query: {
+            campus: this.user.campus._id,
+            checkShow: true,
+            isDeleted: false
+          },
+          limit: 1,
+          sort: {createdAt: -1},
+        };
+
+        BannerService.find(params)
+          .subscribe(result => {
+            console.log("result:::\n", result)
+              // if (data && data.banners.length > 0) {
+              //TODO: make custom dialog
+              // let dialogConfig: MdDialogConfig = new MdDialogConfig();
+              // dialogConfig.width = '360px';
+              // dialogConfig.height = '540px';
+              // dialogConfig.position = {top: '60px', left: '400px'};
+              //
+              // let dialogRef = this.mdDialog.open(Banner, dialogConfig);
+              //
+              // dialogRef.componentInstance.banner = data.banners[0];
+              // }
+            }, error => {
+              console.log("error :::\n", error);
+              // this.dialogService.message("알림", "잘못된 요청입니다.")
+              //   .subscribe(() => {});
+            },
+          );
+      },
+
+      loadCampuses() {
+        CampusService.find({})
+          .subscribe((result) => {
+            this.campuses = result.campuses;
+            this.selectedCampus = this.campuses[0];
+
+            this.user.campus = this.selectedCampus;
+            AppService.setUser(this.user);
+
+          }, error => {
+            console.log("error :::\n", error);
+            this.showModal("에러", "서버와의 통신 중 에러가 발생하였습니다.");
+          });
+      },
+
+      pointCreate() {
+        let point = {
+          student: this.user._id,
+          class: this.user.class,
+          action: 'Attendance'
+        };
+
+        PointService.createAttendancePoint(point)
+          .finally(() => {
+            this.getTotalPoint();
+          })
+          .subscribe((result) => {
+            if (result.point && result.point.score === 5) {
+              this.showModal("알림", "오늘의 출석 포인트가 지급되었습니다.");
+            }
+          }, (error) => {
+            console.log(error);
+            this.showModal("알림", "잘못된 요청입니다.");
+          });
+      },
+
+      getTotalPoint() {
+        this.totalScore = 0;
+
+        // this.pointService.find({
+        //   query: {
+        //     student: this.appService.user._id,
+        //     createdAt: {
+        //       $gte: moment().startOf('month').toDate(),
+        //       $lt: moment().endOf('month').toDate()
+        //     }
+        //   }
+        // })
+        //   .subscribe((result) => {
+        //     this.pointers = result.pointers;
+        //
+        //     _.forEach(this.pointers, (point) => {
+        //       this.totalScore += point.score;
+        //     });
+        //
+        //     this.appService.myScore = this.totalScore;
+        //   }, error => {
+        //     this.dialogService.message("에러", "서버와의 통신중 에러가 발생하였습니다.\n" + error)
+        //   });
+      },
+
       logOut() {
         //TODO: make logout request by axios
-        // this.authService.logout()
-        //   .subscribe((result) => {
-        //     this.appService.user = null;
-        //     this.appService.token = null;
-        //     this.user = null;
-        //     this.appService.myScore = null;
-        //
-        //     this.gotoRoute('before-login/intro');
-        //
-        //   }, (err) => {
-        //     this.dialogService.message("에러", "에러가 발생하였습니다.");
-        //   });
-      }
+        AuthService.logout()
+          .subscribe((result) => {
+            AppService.setUser(null);
+            AppService.setToken(null);
+            AppService.setMyScore(null);
+            this.user = null;
 
+            this.$router.push({path: '/before-login/intro'});
+
+          }, (err) => {
+            this.showModal("에러", "에러가 발생하였습니다.");
+          });
+      }
     }
   }
 </script>
