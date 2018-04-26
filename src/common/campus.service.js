@@ -9,10 +9,10 @@ const serverUrl = API_URL + '/campus';
 export default {
 
   count(queryParams) {
-    let params = new URLSearchParams();
-    _.forEach(queryParams, (value, key) => {
-      params.set(key, JSON.stringify(value));
-    });
+    // let params = new URLSearchParams();
+    // _.forEach(queryParams, (value, key) => {
+    //   params.set(key, JSON.stringify(value));
+    // });
 
     return Observable.fromPromise(axios.get(serverUrl + '/count', {
       params: queryParams
@@ -26,11 +26,6 @@ export default {
   },
 
   findOne(queryParams) {
-    let params = new URLSearchParams();
-    _.forEach(queryParams, (value, key) => {
-      params.set(key, JSON.stringify(value));
-    });
-
     return Observable.fromPromise(axios.get(serverUrl + '/findOne', {
       params: queryParams
     }));

@@ -42,11 +42,7 @@ export default {
   },
 
   createAttendancePoint(point) {
-    return Observable.fromPromise(axios.post(serverUrl + '/attendance', point, {
-      headers: {
-        Authorization: 'Bearer ' + AppService.getToken()
-      }
-    }));
+    return Observable.fromPromise(axios.post(serverUrl + '/attendance', point, {}));
   },
 
   update(point) {

@@ -1,216 +1,215 @@
-wela-brand {
-	#wela-brand {
-		.header-container {
-			width:100%;
-			height: 23vw;
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			background-image: url('assets//img/main_intro.png');
-			background-position-y: 0;
-			background-size: 100%;
-			background-repeat: no-repeat;
-			.user-action-wrapper {
-				display: flex;
-				justify-content: flex-end;
-				margin-top: 30px;
-				margin-right: 120px;
-				> span {
-					font-size: 13px;
-					font-weight: 900;
-					color: $white;
-					margin-right: 20px;
-					cursor: pointer;
-				}
-			}
 
-			.title-wrapper {
-				height:70%;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				> div:first-child {
-					color: $white;
-					font-size: 2.3vw;
-					font-weight: 400;
-					margin-right: 340px;
-					margin-bottom: 25px;
-				}
-				> div:last-child {
-					color: $white;
-					font-size: 3.5vw;
-					font-weight: 900;
-					margin-left: 130px;
-				}
-			}
+#wela-brand {
+  .header-container {
+    width: 100%;
+    height: 23vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: url('assets//img/main_intro.png');
+    background-position-y: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    .user-action-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+      margin-right: 120px;
+      > span {
+        font-size: 13px;
+        font-weight: 900;
+        color: $white;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
 
-			.link-wrapper {
-				width:100%;
-				position: absolute;
-				bottom: 7%;
-				display: flex;
-				justify-content: center;
-				> img {
-					margin-right: .7%;
-					cursor: pointer;
-				}
-			}
-		}
+    .title-wrapper {
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > div:first-child {
+        color: $white;
+        font-size: 2.3vw;
+        font-weight: 400;
+        margin-right: 340px;
+        margin-bottom: 25px;
+      }
+      > div:last-child {
+        color: $white;
+        font-size: 3.5vw;
+        font-weight: 900;
+        margin-left: 130px;
+      }
+    }
 
-		.brand-container {
-			width: 50%;
-			margin: 120px auto 0;
-			.title-wrapper {
-				width: 100%;
-				margin-bottom: 50px;
-				> div {
-					width: 100%;
-					display: flex;
-					justify-content: flex-start;
-					font-size: 44px;
-					font-weight: 700;
-				}
+    .link-wrapper {
+      width: 100%;
+      position: absolute;
+      bottom: 7%;
+      display: flex;
+      justify-content: center;
+      > img {
+        margin-right: .7%;
+        cursor: pointer;
+      }
+    }
+  }
 
-			}
-			.download-wrapper {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				border-bottom: 1px solid $black;
-				padding-bottom: 10px;
-				.download-desc {
-					font-size: 0.9vw;
-					font-weight: 400;
-					color: $grey8;
-				}
-				.download-btns {
-					display: flex;
-					flex-direction: row;
-					.icon-btn {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: 9.9vw;
-						height: 40px;
-						padding-top: 3px;
-						margin-left: 20px;
-						background-color: $main1;
-						cursor: pointer;
-						color: $white;
-						font-size: 0.9vw;
-						font-weight: 700;
-						&:last-child {
-							background-color: $main2;
-						}
-					}
-				}
-			}
-		}
+  .brand-container {
+    width: 50%;
+    margin: 120px auto 0;
+    .title-wrapper {
+      width: 100%;
+      margin-bottom: 50px;
+      > div {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 44px;
+        font-weight: 700;
+      }
 
-		.logo-container {
-			width: 50%;
-			margin: 80px auto 200px;
-			display: flex;
-			flex-direction: row;
-			.logo-left-wrapper {
-				display: flex;
-				flex-direction: column;
-				flex: 1;
-				padding-top: 70px;
-				border-right: 1px solid $grey6;
-				.logo-desc {
-					display: flex;
-					align-items:center;
-					margin-bottom: 20px;
-					> img {
-						margin-bottom: 3px;
-					}
-					> span {
-						margin-left: 10px;
-						font-size: 14px;
-						font-weight: 600;
-						color: $black;
-					}
-				}
-				> img {
-					width: 70%;
-				}
-			}
-			.logo-right-wrapper {
-				display: flex;
-				flex-direction: column;
-				flex: 1;
-				margin-left: 3%;
-				.top-logo-panel {
-					margin-bottom: 100px;
-					.top-logo-desc {
-						display: flex;
-						align-items:center;
-						margin-bottom: 20px;
-						> img {
-							margin-bottom: 3px;
-						}
-						> span {
-							margin-left: 10px;
-							font-size: 14px;
-							font-weight: 600;
-							color: $black;
-						}
-					}
-					> img {
-						width: 80%;
-					}
-				}
+    }
+    .download-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $black;
+      padding-bottom: 10px;
+      .download-desc {
+        font-size: 0.9vw;
+        font-weight: 400;
+        color: $grey8;
+      }
+      .download-btns {
+        display: flex;
+        flex-direction: row;
+        .icon-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 9.9vw;
+          height: 40px;
+          padding-top: 3px;
+          margin-left: 20px;
+          background-color: $main1;
+          cursor: pointer;
+          color: $white;
+          font-size: 0.9vw;
+          font-weight: 700;
+          &:last-child {
+            background-color: $main2;
+          }
+        }
+      }
+    }
+  }
 
-				.bottom-logo-panel {
-					display: flex;
-					flex-direction: row;
-					.circle-logo {
-						width:100%;
-						display: flex;
-						flex-direction: column;
-						margin-right: 80px;
-						.circle-logo-desc {
-							margin-bottom: 20px;
-							> img:first-child {
-								margin-bottom: 3px;
-							}
-							> span {
-								margin-left: 10px;
-								font-size: 14px;
-								font-weight: 600;
-								color: $black;
-							}
-						}
-						> img {
-							width: 87%;
-						}
-					}
+  .logo-container {
+    width: 50%;
+    margin: 80px auto 200px;
+    display: flex;
+    flex-direction: row;
+    .logo-left-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding-top: 70px;
+      border-right: 1px solid $grey6;
+      .logo-desc {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        > img {
+          margin-bottom: 3px;
+        }
+        > span {
+          margin-left: 10px;
+          font-size: 14px;
+          font-weight: 600;
+          color: $black;
+        }
+      }
+      > img {
+        width: 70%;
+      }
+    }
+    .logo-right-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-left: 3%;
+      .top-logo-panel {
+        margin-bottom: 100px;
+        .top-logo-desc {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          > img {
+            margin-bottom: 3px;
+          }
+          > span {
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $black;
+          }
+        }
+        > img {
+          width: 80%;
+        }
+      }
 
-					.character-logo {
-						width:100%;
-						display: flex;
-						flex-direction: column;
-						.character-logo-desc {
-							margin-bottom: 20px;
-							> img:first-child {
-								margin-bottom: 3px;
-							}
-							> span {
-								margin-left: 10px;
-								font-size: 14px;
-								font-weight: 600;
-								color: $black;
-							}
-						}
-						> img {
-							width: 87%;
-						}
-					}
-				}
+      .bottom-logo-panel {
+        display: flex;
+        flex-direction: row;
+        .circle-logo {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-right: 80px;
+          .circle-logo-desc {
+            margin-bottom: 20px;
+            > img:first-child {
+              margin-bottom: 3px;
+            }
+            > span {
+              margin-left: 10px;
+              font-size: 14px;
+              font-weight: 600;
+              color: $black;
+            }
+          }
+          > img {
+            width: 87%;
+          }
+        }
 
-			}
-		}
-	}
+        .character-logo {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          .character-logo-desc {
+            margin-bottom: 20px;
+            > img:first-child {
+              margin-bottom: 3px;
+            }
+            > span {
+              margin-left: 10px;
+              font-size: 14px;
+              font-weight: 600;
+              color: $black;
+            }
+          }
+          > img {
+            width: 87%;
+          }
+        }
+      }
+
+    }
+  }
 }

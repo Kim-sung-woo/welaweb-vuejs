@@ -235,11 +235,18 @@
 </template>
 
 <script>
+  //third parth libary
   import axios from 'axios';
-  import {Observable, from, of, range} from 'rxjs';
   import _ from 'lodash'
-  import {API_URL} from '@/common/config'
+  import {Observable, from, of, range} from 'rxjs';
+  import moment from 'moment'
+
+  //Vue.js module
   import {routes} from '../router/index'
+  import { EventBus } from '@/main';
+
+  //System config
+  import {API_URL} from '@/common/config'
 
   //Vue.js Services
   import AppService from '@/common/app.service'
@@ -282,6 +289,9 @@
       }
     },
     created() {
+
+      EventBus.$on('logout', this.logOut);
+
       this.isKeepLogin = !!AppService.getKeepLogin();
 
       if (!this.isKeepLogin) {
@@ -431,10 +441,10 @@
                 this.loadBanner();
             })
             .subscribe(result => {
-              AppService.setToken(result.data.token);
-              AppService.setUser(result.data.user);
-              this.user = result.data.user;
-              this.token = result.data.token;
+              AppService.setToken(result.token);
+              AppService.setUser(result.user);
+              this.user = result.user;
+              this.token = result.token;
 
               if (this.user.role === "학생") {
                 this.$router.push({path: '/student/campus-intro/intro'})
@@ -501,7 +511,6 @@
 
         BannerService.find(params)
           .subscribe(result => {
-            console.log("result:::\n", result)
               // if (data && data.banners.length > 0) {
               //TODO: make custom dialog
               // let dialogConfig: MdDialogConfig = new MdDialogConfig();
@@ -560,30 +569,30 @@
       getTotalPoint() {
         this.totalScore = 0;
 
-        // this.pointService.find({
-        //   query: {
-        //     student: this.appService.user._id,
-        //     createdAt: {
-        //       $gte: moment().startOf('month').toDate(),
-        //       $lt: moment().endOf('month').toDate()
-        //     }
-        //   }
-        // })
-        //   .subscribe((result) => {
-        //     this.pointers = result.pointers;
-        //
-        //     _.forEach(this.pointers, (point) => {
-        //       this.totalScore += point.score;
-        //     });
-        //
-        //     this.appService.myScore = this.totalScore;
-        //   }, error => {
-        //     this.dialogService.message("에러", "서버와의 통신중 에러가 발생하였습니다.\n" + error)
-        //   });
+        PointService.find({
+          query: {
+            student: AppService.getUser()._id,
+            createdAt: {
+              $gte: moment().startOf('month').toDate(),
+              $lt: moment().endOf('month').toDate()
+            }
+          }
+        })
+          .subscribe((result) => {
+            this.pointers = result.pointers;
+
+            _.forEach(this.pointers, (point) => {
+              this.totalScore += point.score;
+            });
+
+            AppService.setMyScore(this.totalScore);
+          }, error => {
+            console.log("error:::\n", error);
+            this.showModal("에러", "서버와의 통신중 에러가 발생하였습니다");
+          });
       },
 
       logOut() {
-        //TODO: make logout request by axios
         AuthService.logout()
           .subscribe((result) => {
             AppService.setUser(null);

@@ -8,57 +8,56 @@
 </template>
 
 <script>
-import SideNav from "./components/SideNav";
+  import SideNav from "./components/SideNav";
+  import axios from 'axios';
 
-export default {
-  name: 'App',
-  components: {
-    SideNav
-  },
-  created() {
-    this.initialiseInterceptor();
-  },
-  methods: {
-    initialiseInterceptor() {
-      this.httpInterceptor.request().addInterceptor((req, method) => {
+  //Vue.js Services
+  import AppService from '@/common/app.service'
 
-        let requestOption = getHttpOptionsAndIdx(req, method);
-        requestOption.options.withCredentials = true;
-        req[requestOption.idx] = requestOption.options;
+  export default {
+    name: 'App',
+    mixins: [
+      AppService
+    ],
+    components: {
+      SideNav
+    },
+    created() {
+      this.initialiseInterceptor();
+    },
+    methods: {
+      initialiseInterceptor() {
+        axios.interceptors.request.use(function (config) {
+          const token = AppService.getToken();
+          if(token) {
+            config.headers.Authorization = `Bearer ${token}`;
+          }
 
-        // Setting header?
-        if (this.appService.token) {
-          let requestHeaders = getHttpHeadersOrInit(req, method);
-          requestHeaders.set('Authorization', 'Bearer ' + this.appService.token);
-          requestOption.options.headers = requestHeaders;
-        }
+          return config;
+        }, function (error) {
+          // Do something with request error
+          return Promise.reject(error);
+        });
 
-        return req;
-      });
+        // Add a response interceptor
+        axios.interceptors.response.use(function (response) {
+          return response.data;
+        }, function (error) {
+          // Do something with response error
+          if (error.status === 401) {
+            AppService.setUser(null);
+            AppService.setToken(null);
+            this.$router.push({path: '/before-login/intro'});
 
-      this.httpInterceptor.response().addInterceptor((res, method) => {
-        return res
-          .map(res => {
-            if (res._body)
-              return res.json();
-            return res;
-          })
-          .catch((err) => {
-            // if (err.status === 403 || err.status === 401) {
-            if (err.status === 401) {
-              this.appService.user = null;
-              this.appService.token = null;
-              this.router.navigateByUrl('before-login/intro');
-
-              throw err;
-            } else {
-              throw err;
-            }
-          });
-      });
+            throw error;
+          } else {
+            throw error;
+          }
+          // return Promise.reject(error);
+        });
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">

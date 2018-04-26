@@ -13,9 +13,12 @@ Vue.config.productionTip = false
 
 Vue.use(VModal, { dialog: true })
 
+export const EventBus = new Vue()
+
 new Vue({
   el: '#app',
   router,
+  EventBus,
   template: '<App/>',
   components: { App },
 })

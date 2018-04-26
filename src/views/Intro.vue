@@ -154,16 +154,22 @@
       </div>
     </div>
 
-    <!--<footer></footer>-->
+    <WelaFooter></WelaFooter>
   </div>
 </template>
 
 <script>
+  import WelaFooter from "@/components/WelaFooter"
   import AppService from '@/common/app.service'
 
   export default {
     name: "Intro",
-    mixins: [AppService],
+    mixins: [
+      AppService
+    ],
+    components: {
+      WelaFooter
+    },
     data() {
       return {
         token: '',
@@ -187,15 +193,15 @@
        *****************************/
 
       gotoUserFind() {
-        // this.router.navigate(['/before-login/user-find']);
+        this.$router.push({path: '/before-login/user-find'})
       },
 
       gotoRegisterUser() {
-        // this.router.navigate(['/before-login/register-user']);
+        this.$router.push({path: '/before-login/register-user'})
       },
 
       gotoUpdateMyinfo() {
-        // this.router.navigate(['/before-login/register-user'],{queryParams: {'isEditMode':true}});
+        this.$router.push({path: '/before-login/register-user', query: {'isEditMode':true}})
       },
 
       gotoExternalLink(param) {
@@ -220,7 +226,7 @@
        *****************************/
 
       logOut() {
-        // this.appService.sendEvent('logout');
+        AppService.sendEvent('logout', null);
       },
 
       loadCampus() {

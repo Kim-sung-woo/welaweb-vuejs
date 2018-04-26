@@ -1,3 +1,5 @@
+import { EventBus } from '@/main';
+
 export default {
   setToken(token) {
     if (token)
@@ -58,5 +60,9 @@ export default {
       localStorage.setItem('wela_myScore', JSON.stringify(_myScore));
     else
       localStorage.removeItem('wela_myScore');
+  },
+
+  sendEvent(eventName, data) {
+    EventBus.$emit(eventName, data ? data : null);
   }
 }
